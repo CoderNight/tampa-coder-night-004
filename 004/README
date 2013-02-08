@@ -1,0 +1,18 @@
+Hitting Rock Bottom
+-------------------
+
+http://puzzlenode.com/users/866/submissions/2585
+
+To solve the problem, I went for fewest lines of code possible while still
+maintaining decent readability. I figured the best way to achieve this in
+Ruby, with its many convenient string methods, would be to use primarily
+string manipulation rather than creating other data structures. I'm thinking I
+ended up being wrong here, so I'm anxious to see other submissions that make
+more use of data structures.
+
+Along the way I also tried to be pretty clever with syntax where possible, since,
+you know, you don't get to do that with "real work" very often ;)
+
+To run:
+
+    $ ruby flow.rb samples/complex_cave.txt

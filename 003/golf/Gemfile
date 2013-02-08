@@ -1,0 +1,7 @@
+gem 'aruba'
+group :testing, :development do
+  gem 'guard'
+  gem 'rb-fsevent'
+  gem 'guard-cucumber'
+  gem 'rubygems-bundler'
+end

@@ -1,0 +1,8 @@
+desc "Test the complex output"
+task :test do
+  %x[./cave.rb ../caves/complex_cave.txt > out.txt]
+  puts `if diff out.txt ../caves/complex_out.txt > /dev/null 2>&1; then echo $'\\n\\e[01;32mPass\\e[0m'; else echo $'\\n\\e[01;31mFail\\e[0m'; fi`
+  %x[rm out.txt]
+end
+
+task :default => [:test]

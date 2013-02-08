@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+def f i;return if$d[i]!=' '||$n.to_i<=$d.count('~');$d[i]='~';f i+$w;f i+1;end
+$n,$d=ARGF.read.split(/\n\n/m)
+$d[$w=$d.index("~")]=' '
+f$w
+puts$d.split(/\n/).map{|e|e.scan /./}.transpose.map{|c|c.count'~'}.join(" ")

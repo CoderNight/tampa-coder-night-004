@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+
+require 'cave'
+require 'optparse'
+require 'pry'
+
+n = nil
+do_display = false;
+
+ARGV.options do |opts|
+  opts.banner = "Usage: cave [options] filename"
+  opts.on("-n num", Integer, "Will use parameter as the n value rather than the file.") { |val| n = val }
+  opts.on("--display", "-d", "Display the final cave rather than calculating the depth.") { do_display = true }
+end.parse!
+
+if ARGV.size != 1
+  puts ARGV.options.help
+  exit
+end
+
+cave = Cave.new
+cave.load ARGV[0]
+cave.run n
+if do_display
+  puts cave
+else
+  puts cave.calc_depth
+end

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative 'lib/rock_bottom'
+
+if ARGV.size < 1
+  puts "Usage: rock_bottom </path/to/input> </path/to/output>"
+else
+  flood = RockBottom::Flood.new(ARGV[0])
+  flood.flood_cave
+  flood.print
+  puts flood.water_depth_report
+  File.open(ARGV[1] || 'rock_bottom_out.txt', 'w') do |out|
+    out.write(flood.water_depth_report)
+  end
+end

@@ -1,0 +1,8 @@
+source :rubygems
+
+group :test do
+  gem 'growl'
+  gem 'rspec'
+  gem 'guard-rspec'
+end
+
